@@ -4,7 +4,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "rundev": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
@@ -13,6 +14,7 @@
     "bcryptjs": "^2.4.3",
     "clarifai": "^2.9.1",
     "clarifai-nodejs": "^0.0.3",
+    "cloudinary": "^2.5.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.0",

@@ -1,4 +1,5 @@
 const { Model } = require("clarifai-nodejs");
+const cloudinary = require("../config/cloudinaryConfig");
 const db = require("../config/dbConfig");
 
 const model = new Model({
@@ -7,6 +8,9 @@ const model = new Model({
 });
 
 const generateImageController = async (req, res) => {
+  console.log("generate started");
+  console.log(req.body);
+
   const { inputText, id } = req.body;
   try {
     const inputBuffer = Buffer.from(inputText, "utf-8");

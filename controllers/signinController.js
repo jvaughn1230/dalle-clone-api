@@ -1,13 +1,16 @@
 const db = require("../config/dbConfig");
 const bcrypt = require("bcryptjs");
 
-const logincontroller = async (req, res) => {
+const signincontroller = async (req, res) => {
   const { email, password } = req.body;
 
   try {
-    const loginData = await db("login").where({ email }).select("hash").first();
+    const signinData = await db("login")
+      .where({ email })
+      .select("hash")
+      .first();
 
-    if (!loginData) {
+    if (!signinData) {
       return res.status(400).json("Invalid Credentials");
     }
 
@@ -30,4 +33,4 @@ const logincontroller = async (req, res) => {
   }
 };
 
-module.exports = logincontroller;
+module.exports = signincontroller;
